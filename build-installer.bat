@@ -41,7 +41,7 @@ if %errorlevel% neq 0 (
 
 echo.
 echo [4/4] Building Windows installer...
-call npx electron-builder --win --config.win.signDllAndExe=false
+call npx electron-builder --win
 if %errorlevel% neq 0 (
     echo ERROR: Electron builder failed!
     pause
