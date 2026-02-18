@@ -4,6 +4,9 @@ echo   DeckForge - Windows Installer Builder
 echo ============================================
 echo.
 
+REM Skip code signing (not needed for unsigned builds)
+set CSC_IDENTITY_AUTO_DISCOVERY=false
+
 echo [1/4] Installing dependencies...
 call npm install
 if %errorlevel% neq 0 (
@@ -32,7 +35,7 @@ if %errorlevel% neq 0 (
 
 echo.
 echo [4/4] Building Windows installer...
-call npx electron-builder --win
+call npx electron-builder --win --config.win.signDllAndExe=false
 if %errorlevel% neq 0 (
     echo ERROR: Electron builder failed!
     pause

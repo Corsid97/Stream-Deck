@@ -75,7 +75,9 @@
       "icon": "resources/icon.ico",
       "target": [
         "nsis"
-      ]
+      ],
+      "signAndEditExecutable": false,
+      "sign": null
     },
     "mac": {
       "target": [
