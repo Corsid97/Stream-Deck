@@ -1,6 +1,7 @@
 node_modules/
 dist/
 release/
+build/
 .env
 .env.local
 *.log
@@ -10,3 +11,9 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+
+# Don't commit compiled JS in source directories
+src/**/*.js
+src/**/*.js.map
+src/**/*.d.ts
+src/**/*.d.ts.map
