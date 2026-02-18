@@ -1,4 +1,7 @@
 @echo off
+REM Change to the directory where this script lives (the project root)
+cd /d "%~dp0"
+
 echo ============================================
 echo   DeckForge - Windows Installer Builder
 echo ============================================
@@ -6,6 +9,9 @@ echo.
 
 REM Skip code signing (not needed for unsigned builds)
 set CSC_IDENTITY_AUTO_DISCOVERY=false
+
+echo Working directory: %cd%
+echo.
 
 echo [1/4] Installing dependencies...
 call npm install
